@@ -44,6 +44,19 @@ squares.forEach(function(square)
 
 
 
+squares.forEach(function(ele) 
+{
+    ele.addEventListener('mouseover', function(e) 
+    {
+      e.target.classList.add('hover');
+    });
+    
+    ele.addEventListener('mouseout', function(e) 
+    {
+      e.target.classList.remove('hover');
+    });
+});
+
 
 
 
