@@ -13,7 +13,15 @@ var square1 = document.getElementById('board').getElementsByTagName('div')[6].se
 var square1 = document.getElementById('board').getElementsByTagName('div')[7].setAttribute("class", "square");
 var square1 = document.getElementById('board').getElementsByTagName('div')[8].setAttribute("class", "square");
 
+
+
 const squares = document.querySelectorAll('.square');
+
+const winnMsg = document.getElementById('status')
+
+const newGameBtn = document.getElementsByClassName('btn');
+
+
 
 
 const gameTracker = [];
@@ -43,12 +51,11 @@ squares.forEach(function(square)
             gameTracker.push("O")
 
         }
+        
 
-        if (winner())
-        {
-            return false;
-        }
         currentPlayer = currentPlayer == "X" ? "O" : "X"
+        winner()
+
         
         
         
@@ -75,25 +82,42 @@ squares.forEach(function(ele)
 
 
 
+
+newGameBtn.addEventListener('click', e => 
+{
+    squares.forEach((square) => 
+    {
+      square.innerText = "";
+    });
+    winnMsg.innerHTML = `Move your mouse over a square and click to play an X or an O.`;
+  
+    currentPlayer = player_X;    
+});
+
+
+
+
+
+
 function winner()
 {
 
     if("X" == squares[0].innerText && "X" == squares[1].innerText && "X" == squares[2].innerText)
     {
 
-        const winnMsg = document.getElementById('status')
+        
         winnMsg.innerText = `Congratulations! X is the Winner!`;
         winnMsg.setAttribute('class', 'you-won')
-        return;
+        
     
     }
     if(squares[0].innerText == "O" && squares[1].innerText == "O" && squares[2].innerText == "O")
     {
 
-        const winnMsg = document.getElementById('status')
+        
         winnMsg.innerText = `Congratulations! O is the Winner!`;
         winnMsg.setAttribute('class', 'you-won')
-        return;
+        
     
     }
 
@@ -101,18 +125,18 @@ function winner()
 
     else if(squares[3].innerText == "X" && squares[4].innerText == "X" && squares[5].innerText == "X")
     {
-        const winnMsg = document.getElementById('status')
+        
         winnMsg.innerText = `Congratulations! X is the Winner!`;
         winnMsg.setAttribute('class', 'you-won')
-        return;
+        
     
     }
     else if(squares[3].innerText == "O" && squares[4].innerText == "O" && squares[5].innerText == "O")
     {
-        const winnMsg = document.getElementById('status')
+        
         winnMsg.innerText = `Congratulations! O is the Winner!`;
         winnMsg.setAttribute('class', 'you-won')
-        return;
+        
     
     }
 
@@ -122,18 +146,18 @@ function winner()
 
     else if(squares[6].innerText == "X" && squares[7].innerText == "X" && squares[8].innerText == "X")
     {
-        const winnMsg = document.getElementById('status')
+        
         winnMsg.innerText = `Congratulations! X is the Winner!`;
         winnMsg.setAttribute('class', 'you-won')
-        return;
+        
     
     }
     else if(squares[6].innerText == "O" && squares[7].innerText == "O" && squares[8].innerText == "O")
     {
-        const winnMsg = document.getElementById('status')
+        
         winnMsg.innerText = `Congratulations! O is the Winner!`;
         winnMsg.setAttribute('class', 'you-won')
-        return;
+        
     
     }
 
@@ -143,19 +167,19 @@ function winner()
 
     else if(squares[0].innerText == "X" && squares[3].innerText == "X" && squares[6].innerText == "X")
     {
-        const winnMsg = document.getElementById('status')
+        
         winnMsg.innerText = `Congratulations! X is the Winner!`;
         winnMsg.setAttribute('class', 'you-won')
-        return;
+        
        
     
     }
     else if(squares[0].innerText == "O" && squares[3].innerText == "O" && squares[6].innerText == "O")
     {
-        const winnMsg = document.getElementById('status')
+        
         winnMsg.innerText = `Congratulations! O is the Winner!`;
         winnMsg.setAttribute('class', 'you-won')
-        return;
+        
        
     
     }
@@ -167,19 +191,19 @@ function winner()
 
     else if(squares[1].innerText == "X" && squares[4].innerText == "X" && squares[7].innerText == "X")
     {
-        const winnMsg = document.getElementById('status')
+        
         winnMsg.innerText = `Congratulations! X is the Winner!`;
         winnMsg.setAttribute('class', 'you-won')
-        return;
+        
        
     
     }
     else if(squares[1].innerText == "O" && squares[4].innerText == "O" && squares[7].innerText == "O")
     {
-        const winnMsg = document.getElementById('status')
+        
         winnMsg.innerText = `Congratulations! O is the Winner!`;
         winnMsg.setAttribute('class', 'you-won')
-        return;
+        
        
     
     }
@@ -190,19 +214,19 @@ function winner()
 
     else if(squares[2].innerText == "X" && squares[5].innerText == "X" && squares[8].innerText == "X")
     {
-        const winnMsg = document.getElementById('status')
+        
         winnMsg.innerText = `Congratulations! X is the Winner!`;
         winnMsg.setAttribute('class', 'you-won')
-        return;
+        
         
     
     }
     else if(squares[2].innerText == "O" && squares[5].innerText == "O" && squares[8].innerText == "O")
     {
-        const winnMsg = document.getElementById('status')
+        
         winnMsg.innerText = `Congratulations! O is the Winner!`;
         winnMsg.setAttribute('class', 'you-won')
-        return;
+        
         
     
     }
@@ -214,19 +238,19 @@ function winner()
 
     else if(squares[0].innerText == "X" && squares[4].innerText == "X" && squares[8].innerText == "X")
     {
-        const winnMsg = document.getElementById('status')
+        
         winnMsg.innerText = `Congratulations! X is the Winner!`;
         winnMsg.setAttribute('class', 'you-won')
-        return;
+        
        
     
     }
     else if(squares[0].innerText == "O" && squares[4].innerText == "O" && squares[8].innerText == "O")
     {
-        const winnMsg = document.getElementById('status')
+        
         winnMsg.innerText = `Congratulations! O is the Winner!`;
         winnMsg.setAttribute('class', 'you-won')
-        return;
+        
        
     
     }
@@ -236,19 +260,19 @@ function winner()
 
     else if(squares[2].innerText == "X" && squares[4].innerText == "X" && squares[6].innerText == "X")
     {
-        const winnMsg = document.getElementById('status')
+        
         winnMsg.innerText = `Congratulations! X is the Winner!`;
         winnMsg.setAttribute('class', 'you-won')
-        return;
+        
        
     
     }
     else if(squares[2].innerText == "O" && squares[4].innerText == "O" && squares[6].innerText == "O")
     {
-        const winnMsg = document.getElementById('status')
+        
         winnMsg.innerText = `Congratulations! O is the Winner!`;
         winnMsg.setAttribute('class', 'you-won')
-        return;
+        
        
     
     }
